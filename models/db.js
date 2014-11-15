@@ -22,7 +22,7 @@ var UniversitySchema = new mongoose.Schema({
   undergrads: Number,
   graduates: Number
 });
-mongoose.model('University', UniversitySchema);
+mongoose.model('Universities', UniversitySchema);
 
 var RatingSchema = new mongoose.Schema({
   id: Number,
@@ -35,7 +35,7 @@ var RatingSchema = new mongoose.Schema({
   advice: String,
   costs: Number
 });
-mongoose.model('Rating', RatingSchema);
+mongoose.model('Ratings', RatingSchema);
 
 var SaleSchema = new mongoose.Schema({
   id: Number,
@@ -45,7 +45,7 @@ var SaleSchema = new mongoose.Schema({
   type: String,
   links: Array
 });
-mongoose.model('Sale', SaleSchema);
+mongoose.model('Sales', SaleSchema);
 
 var ProfessorSchema = new mongoose.Schema({
   id: Number,
@@ -56,7 +56,7 @@ var ProfessorSchema = new mongoose.Schema({
   helpfulness: Number,
   takesAttendance: Boolean
 });
-mongoose.model('Professor', ProfessorSchema);
+mongoose.model('Professors', ProfessorSchema);
 
 var CourseSchema = new mongoose.Schema({
   id: Number,
@@ -70,6 +70,6 @@ var CourseSchema = new mongoose.Schema({
   assignmentDifficulty: Number,
   averageInterestRating: Number
 });
-mongoose.model('Course', CourseSchema);
+mongoose.model('Courses', CourseSchema);
 
 mongoose.connect('mongodb://localhost:27017/db')

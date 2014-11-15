@@ -1,3 +1,7 @@
 var mongoose = require('mongoose');
 
-var University = mongoose.model('University');
+var Universities = mongoose.model('Universities');
+
+exports.averageRating = function (callback) {
+  Rating.find({})
+}
