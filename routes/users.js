@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var users = require('../models/users');
+//var users = require('../models/users');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-var User = users.User;
+var User = require('../models/db').userModel;
 
 var user = new User({username: 'admin', email: 'admin@example.com', password: 'admin'});
 user.save(function (err) {
@@ -15,10 +15,14 @@ user.save(function (err) {
   }
 });
 
+// Passport session setup.
+//   To support persistent login sessions, Passport needs to be able to
+//   serialize users into and deserialize users out of the session.  Typically,
+//   this will be as simple as storing the user ID when serializing, and finding
+//   the user by ID when deserializing.
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
-
 passport.deserializeUser(function(id, done) {
   User.findById(id, function (err, user) {
     done(err, user);
@@ -46,9 +50,10 @@ router.get('/', function(req, res) {
 });
 
 router.post('/login', function(req, res, next) {
-  passport.authenticate('local', function(err, user, info) {
+  passport.authenticate('local', function(err, user) {
     if (err) { return next(err) }
     if (!user) {
+      console.log("unknown user.");
       return res.redirect('/users')
     }
     req.logIn(user, function(err) {
