@@ -1,6 +1,8 @@
 var mongoose = require("mongoose");
 var bcrypt = require('bcrypt');
 
+mongoose.connect('mongodb://localhost:27017/db');
+
 var UserSchema = new mongoose.Schema({
   username: String,
   password: String,
@@ -26,7 +28,8 @@ UserSchema.methods.comparePassword = function(candidatePassword, cb) {
     cb(null, isMatch);
   });
 };
-mongoose.model('User', UserSchema);
+var userModel = mongoose.model('User', UserSchema);
+exports.userModel = userModel;
 
 var UniversitySchema = new mongoose.Schema({
   id: Number,
@@ -93,5 +96,3 @@ var CourseSchema = new mongoose.Schema({
   averageInterestRating: Number
 });
 mongoose.model('Courses', CourseSchema);
-
-mongoose.connect('mongodb://localhost:27017/db');
