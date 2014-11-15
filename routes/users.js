@@ -40,6 +40,22 @@ router.get('/', function(req, res) {
   res.render('users');
 });
 
+router.post('/signup', function(req, res) {
+  var username = req.param('username');
+  var password = req.param('password');
+  var email = req.param('email');
+
+  var user = new User({username: username, email: email, password: email});
+  user.save(function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('user: ' + user.username + " added.");
+    }
+  });
+  res.redirect('/')
+});
+
 router.post('/login', function(req, res, next) {
   passport.authenticate('local', function(err, user) {
     if (err) { return next(err) }
