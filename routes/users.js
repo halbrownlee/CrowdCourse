@@ -43,9 +43,8 @@ router.get('/', function(req, res) {
 router.post('/signup', function(req, res) {
   var username = req.param('username');
   var password = req.param('password');
-  var email = req.param('email');
 
-  var user = new User({username: username, email: email, password: email});
+  var user = new User({username: username, email: "N/A", password: password});
   user.save(function (err) {
     if (err) {
       console.log(err);
