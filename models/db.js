@@ -28,6 +28,7 @@ var RatingSchema = new mongoose.Schema({
   id: Number,
   courseId: Number,
   professorId: Number,
+  universityId: Number,
   author: String,
   rating: Number,
   easiness: Number,
