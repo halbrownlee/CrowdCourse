@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Responsive Bootstrap App Landing Page Template">
+<meta name="keywords" content="Kane, Bootstrap, Landing page, Template, App, Mobile">
+<meta name="author" content="Mizanur Rahman">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- SITE TITLE -->
+<title>Crowd Course - Crowd Course</title>
+
+<!-- =========================
+      FAV AND TOUCH ICONS  
+============================== -->
+<link rel="icon" href="../images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png">
+
+<!-- =========================
+     STYLESHEETS   
+============================== -->
+<!-- BOOTSTRAP -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+<!-- FONT ICONS -->
+<link rel="stylesheet" href="../assets/elegant-icons/style.css">
+<link rel="stylesheet" href="../assets/app-icons/styles.css">
+<!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
+
+<!-- WEB FONTS -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,400,300italic' rel='stylesheet' type='text/css'>
+
+<!-- CAROUSEL AND LIGHTBOX -->
+<!-- <link rel="stylesheet" href="css/owl.theme.css">
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/nivo-lightbox.css">
+<link rel="stylesheet" href="css/nivo_themes/default/default.css"> -->
+
+<!-- ANIMATIONS -->
+<link rel="stylesheet" href="../css/animate.min.css">
+
+<!-- CUSTOM STYLESHEETS -->
+<link rel="stylesheet" href="../css/styles.css">
+
+<!-- COLORS -->
+<link rel="stylesheet" href="../css/colors/blue.css"> <!-- DEFAULT COLOR/ CURRENTLY USING -->
+<!-- <link rel="stylesheet" href="css/colors/red.css"> --> 
+<!-- <link rel="stylesheet" href="css/colors/green.css"> --> 
+<!-- <link rel="stylesheet" href="css/colors/purple.css"> --> 
+<!-- <link rel="stylesheet" href="css/colors/orange.css"> --> 
+<!-- <link rel="stylesheet" href="css/colors/blue-munsell.css"> --> 
+<!-- <link rel="stylesheet" href="css/colors/slate.css"> --> 
+<!-- <link rel="stylesheet" href="css/colors/yellow.css"> -->
+
+<!-- RESPONSIVE FIXES -->
+<link rel="stylesheet" href="../css/responsive.css">
+
+
+<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+			<script src="js/respond.min.js"></script>
+<![endif]-->
+
+<!-- JQUERY -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+<!-- =========================
+     PRE LOADER       
+============================== -->
+<div class="preloader">
+  <div class="status">&nbsp;</div>
+</div>
+
+<!-- =========================
+     HEADER   
+============================== -->
+<header class="header" data-stellar-background-ratio="0.5" id="home">
+
+<!-- COLOR OVER IMAGE -->
+<div class="color-overlay"> <!-- To make header full screen. Use .full-screen class with color overlay. Example: <div class="color-overlay full-screen">  -->
+
+	<!-- STICKY NAVIGATION -->
+	<div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation">
+		<div class="container">
+			<div class="navbar-header">
+				
+				<!-- LOGO ON STICKY NAV BAR -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#kane-navigation">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+
+				<a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
+				
+			</div>
+			
+			<!-- NAVIGATION LINKS -->
+			<div class="navbar-collapse collapse" id="kane-navigation">
+		      <!-- <form class="navbar-search navbar-left" role="search">
+		        <div class="form-group">
+		          <input type="text" class="search-query" placeholder="Search">
+		        </div>
+		      </form> -->
+<!-- 
+		      	<form class="navbar-search pull-left">
+  					<input type="text" class="search-query" placeholder="Search">
+				</form> -->
+      <form class="navbar-form navbar-left col-md-8" role="search">
+      <i class="icon_search fa"></i>
+        <div class="form-group">
+          <input type="text" id="searchBox" class="form-control col-md-8" placeholder="Search for a course">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+				<ul class="nav navbar-nav navbar-right main-navigation">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#University">University</a></li>
+					<li><a href="#Course">Course</a></li>
+					<li><a href="#signUp">Sign Up</a></li>
+					<!-- <li><a href="#services">Services</a></li> -->
+				</ul>
+			</div>
+		</div> <!-- /END CONTAINER -->
+	</div> <!-- /END STICKY NAVIGATION -->
+	
+	
+	<!-- CONTAINER -->
+	<div class="container">
+		
+		<!-- ONLY LOGO ON HEADER -->
+		<div class="only-logo">
+			<div class="navbar">
+				<div class="navbar-header">
+					<img src="images/logo.png" alt="">
+				</div>
+			</div>
+		</div> <!-- /END ONLY LOGO ON HEADER -->
+		
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				
+				<!-- HEADING AND BUTTONS -->
+				<div class="intro-section">
+					
+					<!-- WELCOM MESSAGE -->
+					<h1 class="intro">Es sólo una ayuda básica que necesita para corregir el resultado. </h1>
+					<h5>Venga a compartir ideas, formar equipos, y nuevas empresas de lanzamiento.</h5>
+					
+					<!-- BUTTON -->
+					<ul>
+					<li class="buttons col-md-4" id="university-button">
+						<a href="#" class="btn btn-default btn-lg standard-button"><i class="glyphicon glyphicon-map-marker"></i>Find a University</a>
+					</li>
+
+					<li class="buttons col-md-4" id="course-button">
+						<a href="#" class="btn btn-default btn-lg standard-button"><i class="icon-app-download"></i>Find a Course</a>
+					</li>
+					<li class="buttons col-md-4" id="rate-button">
+						<a href="#" class="btn btn-default btn-lg standard-button"><i class="icon_building_alt"></i>Rate a Course</a>
+					</li>
+					</ul>
+					
+
+
+					<!-- /END BUTTONS -->
+					
+				</div>
+				<!-- /END HEADNING AND BUTTONS -->
+				
+			</div>
+		</div>
+		<!-- /END ROW -->
+		
+	</div>
+	<!-- /END CONTAINER -->
+</div>
+<!-- /END COLOR OVERLAY -->
+</header>
+<!-- /END HEADER -->
+
+
+<!-- =========================
+     FOOTER 
+============================== -->
+<footer>
+
+<div class="container">
+	
+	<div class="contact-box wow rotateIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+		
+		<!-- CONTACT BUTTON TO EXPAND OR COLLAPSE FORM -->
+		
+		<a class="btn contact-button expand-form expanded"><i class="icon_mail_alt"></i></a>
+		
+		<!-- EXPANDED CONTACT FORM -->
+		<div class="row expanded-contact-form">
+			
+			<div class="col-md-6 ">
+				
+				<!-- FORM -->
+				<form class="contact-form" id="Login" role="form">
+					
+					<!-- IF MAIL SENT SUCCESSFULLY -->
+					<h4 class="success">
+						<i class="icon_check"></i> You have created your account.
+					</h4>
+					
+					<!-- IF MAIL SENDING UNSUCCESSFULL -->
+					<h4 class="error">
+						<i class="icon_error-circle_alt"></i> Error!
+					</h4>
+					
+					<div class="col-md-8 col-md-offset-2">
+						<input class="form-control input-box" id="name" type="text" name="name" placeholder="User Name/Email Address">
+					</div>
+					
+					<!-- <div class="col-md-6">
+						<input class="form-control input-box" id="email" type="email" name="email" placeholder="Email Address">
+					</div> -->
+					
+					<div class="col-md-8 col-md-offset-2">
+						<input class="form-control input-box" id="password" type="password" name="password" placeholder="Password">
+					</div>
+
+					<!-- <div class="col-md-12">
+						<input class="form-control input-box" id="subject" type="text" name="subject" placeholder="Subject">
+						<textarea class="form-control textarea-box" id="message" rows="8" placeholder="Message"></textarea>
+					</div> -->
+					<button class="btn btn-primary standard-button2 ladda-button" type="submit" id="submit" name="submit" data-style="expand-left">Login</button>
+					
+				</form>
+				<!-- /END FORM -->
+			</div>
+
+			<div class="col-md-6">
+				
+				<!-- FORM -->
+				<form class="contact-form" id="Login" role="form">
+					
+					<!-- IF MAIL SENT SUCCESSFULLY -->
+					<h4 class="success">
+						<i class="icon_check"></i> You have created your account.
+					</h4>
+					
+					<!-- IF MAIL SENDING UNSUCCESSFULL -->
+					<h4 class="error">
+						<i class="icon_error-circle_alt"></i> Error!
+					</h4>
+					
+					<div class="col-md-8 col-md-offset-2">
+						<input class="form-control input-box" id="name" type="text" name="name" placeholder="User Name/Email Address">
+					</div>
+					
+					<!-- <div class="col-md-6">
+						<input class="form-control input-box" id="email" type="email" name="email" placeholder="Email Address">
+					</div> -->
+					
+					<div class="col-md-8 col-md-offset-2">
+						<input class="form-control input-box" id="password" type="password" name="password" placeholder="Password">
+					</div>
+
+					<!-- <div class="col-md-12">
+						<input class="form-control input-box" id="subject" type="text" name="subject" placeholder="Subject">
+						<textarea class="form-control textarea-box" id="message" rows="8" placeholder="Message"></textarea>
+					</div> -->
+					<button class="btn btn-primary standard-button2 ladda-button" type="submit" id="submit" name="submit" data-style="expand-left">Sign up</button>
+					
+				</form>
+				<!-- /END FORM -->
+			</div>
+			
+		</div>
+		<!-- /END EXPANDED CONTACT FORM -->
+		
+	</div>
+	<!-- /END CONTACT BOX -->
+	
+	<!-- LOGO -->
+	<img src="images/logo.png" alt="LOGO" class="responsive-img">
+	
+	<!-- SOCIAL ICONS -->
+	<ul class="social-icons">
+		<li><a href=""><i class="social_facebook_square"></i></a></li>
+		<li><a href=""><i class="social_twitter_square"></i></a></li>
+		<li><a href=""><i class="social_pinterest_square"></i></a></li>
+		<li><a href=""><i class="social_googleplus_square"></i></a></li>
+		<li><a href=""><i class="social_instagram_square"></i></a></li>
+		<li><a href=""><i class="social_dribbble_square"></i></a></li>
+		<li><a href=""><i class="social_flickr_square"></i></a></li>
+	</ul>
+	
+	<!-- COPYRIGHT TEXT -->
+	<p class="copyright">
+		©2014 Crowd Course, All Rights Reserved
+	</p>
+
+</div>
+<!-- /END CONTAINER -->
+ 
+</footer>
+<!-- /END FOOTER -->
+
+
+<!-- =========================
+     SCRIPTS 
+============================== -->
+
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/smoothscroll.js"></script>
+<script src="../js/jquery.scrollTo.min.js"></script>
+<script src="../js/jquery.localScroll.min.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<script src="../js/nivo-lightbox.min.js"></script>
+<script src="../js/simple-expand.min.js"></script>
+<script src="../js/wow.min.js"></script>
+<script src="../js/jquery.stellar.min.js"></script>
+<script src="../js/retina-1.1.0.min.js"></script>
+<script src="../js/jquery.nav.js"></script>
+<script src="../js/matchMedia.js"></script>
+<script src="../js/jquery.ajaxchimp.min.js"></script>
+<script src="../js/jquery.fitvids.js"></script>
+<script src="../js/custom.js"></script>
+
+</body>
+</html>
