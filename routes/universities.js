@@ -1,9 +1,9 @@
 var express = require('express');
-var router = express.router();
+var router = express.Router();
 var universities = require('../models/universities');
 
-router.get('/averageRating/:uid', function (req, res) {
-  var uid = parseInt(req.params['uid']);
+router.get('/averageRating/:name', function (req, res) {
+  var uid = parseInt(req.params['name']);
   universities.averageRating(uid, function (err, average) {
     if (err) {
       res.send({
@@ -19,8 +19,8 @@ router.get('/averageRating/:uid', function (req, res) {
   });
 });
 
-router.get('/courses/:uid', function (req, res) {
-  var uid = parseInt(req.params['uid']);
+router.get('/courses/:name', function (req, res) {
+  var uid = parseInt(req.params['name']);
   universities.courses(uid, function (err, courses) {
     if (err) {
       res.send({
@@ -46,3 +46,5 @@ router.post('/create', function (req, res) {
     }
   });
 });
+
+module.exports = router;
