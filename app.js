@@ -1,4 +1,5 @@
 var express = require('express');
+var db = require('./models/db');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -56,6 +57,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
-app.listen(80, function() {
+app.listen(3000, function() {
   console.log("Server listening on port 3000");
 });

@@ -71,3 +71,5 @@ var CourseSchema = new mongoose.Schema({
   averageInterestRating: Number
 });
 mongoose.model('Course', CourseSchema);
+
+mongoose.connect('mongodb://localhost:27017/db')
