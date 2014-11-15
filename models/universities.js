@@ -5,36 +5,48 @@ var Rating = Ratings = mongoose.model('Ratings');
 var Course = Courses = mongoose.model('Courses');
 
 exports.averageRating = function (name, callback) {
-  Ratings.findOne({ name: name }, function (err, ratings) {
+  Universities.findOne({ name: name }, function (err, univerity) {
     if (err) {
-      callback(err, null);
-    } else if (typeof ratings === 'undefined' || ratings === null) {
-      callback(null, 0.0);
+      callback('Could not find ' + name, null);
     } else {
-      var sum = 0.0;
-      for (var i = 0, len = ratings.length; i < len; i++) {
-        sum += ratings[i].rating;
-      }
-      callback(null, sum / ratings.length);
-    }
-  });
+      Ratings.findOne({ universityId: university.id }, function (err, ratings) {
+        if (err) {
+          callback('Could not find ratings for ' + name, null);
+        } else if (typeof ratings === 'undefined' || ratings === null) {
+          callback(null, 0.0);
+        } else {
+          var sum = 0.0;
+          for (var i = 0, len = ratings.length; i < len; i++) {
+            sum += ratings[i].rating;
+          }
+          callback(null, sum / ratings.length);
+        }
+      });
+    });
+  }
 };
 
 exports.courses = function (name, callback) {
-  Courses.findOne({ name: name }, function (err, courses) {
+  Universities.findOne({ name: name }, function (err, university) {
     if (err) {
-      callback(err, null);
+      callback('Could not find ' + name, null);
     } else {
-      var courseList = new Array(courses.length);
-      for (var i = 0, len = courses.length; i < len; i++) {
-        courseList[i] = {
-          name: courses[i].name,
-          courseNumber: courses[i].number
+      Courses.findOne({ universityId: university.id }, function (err, courses) {
+        if (err) {
+          callback('Could not find courses for ' + name, null);
+        } else {
+          var courseList = new Array(courses.length);
+          for (var i = 0, len = courses.length; i < len; i++) {
+            courseList[i] = {
+              name: courses[i].name,
+              courseNumber: courses[i].number
+            }
+          }
+          callback(null, courseList);
         }
-      }
-      callback(null, courseList);
-    }
-  });
+      });
+    });
+  }
 };
 
 exports.create = function (name, address, callback) {
