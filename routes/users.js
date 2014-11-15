@@ -1,19 +1,10 @@
 var express = require('express');
 var router = express.Router();
-//var users = require('../models/users');
+var users = require('../models/users');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-var User = require('../models/db').userModel;
-
-var user = new User({username: 'admin', email: 'admin@example.com', password: 'admin'});
-user.save(function (err) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('user: ' + user.username + " saved.");
-  }
-});
+var User = users.userModel;
 
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to

@@ -28,8 +28,7 @@ UserSchema.methods.comparePassword = function(candidatePassword, cb) {
     cb(null, isMatch);
   });
 };
-var userModel = mongoose.model('User', UserSchema);
-exports.userModel = userModel;
+mongoose.model('User', UserSchema);
 
 var UniversitySchema = new mongoose.Schema({
   id: Number,
