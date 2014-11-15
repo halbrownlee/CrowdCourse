@@ -4,11 +4,11 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res) {
-  res.render('index', {title: 'Crowd Course', data: ''});
+  res.render('index', {title: 'Crowd Course'});
 });
 
 router.post('/login', function(req, res) {
-  res.render('index', {title: 'Login successful', data: ''});
+  res.render('index', {title: 'Login successful');
 });
 
 module.exports = router;
