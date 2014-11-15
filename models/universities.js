@@ -22,8 +22,8 @@ exports.averageRating = function (name, callback) {
           callback(null, sum / ratings.length);
         }
       });
-    });
-  }
+    }
+  });
 };
 
 exports.courses = function (name, callback) {
@@ -45,8 +45,8 @@ exports.courses = function (name, callback) {
           callback(null, courseList);
         }
       });
-    });
-  }
+    }
+  });
 };
 
 exports.create = function (name, address, callback) {
