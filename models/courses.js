@@ -7,6 +7,8 @@ exports.averageRating = function (name, callback) {
   Courses.findOne({ name: name }, function (err, course) {
     if (err) {
       callback('Could not find ' + name, null);
+    } else if (typeof course === 'undefined' || course === null) {
+      callback('No course found.', null);
     } else {
       Ratings.find({ courseId: course.id }, function (err, ratings) {
         if (err) {

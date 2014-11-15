@@ -8,6 +8,8 @@ exports.averageRating = function (name, callback) {
   Universities.findOne({ name: name }, function (err, univerity) {
     if (err) {
       callback('Could not find ' + name, null);
+    } else if (typeof university === 'undefined' || university === null) {
+      callback('No university found.', null);
     } else {
       Ratings.findOne({ universityId: university.id }, function (err, ratings) {
         if (err) {
@@ -30,6 +32,8 @@ exports.courses = function (name, callback) {
   Universities.findOne({ name: name }, function (err, university) {
     if (err) {
       callback('Could not find ' + name, null);
+    } else if (typeof university === 'undefined' || university === null) {
+        callback('No university found.', null);
     } else {
       Courses.findOne({ universityId: university.id }, function (err, courses) {
         if (err) {

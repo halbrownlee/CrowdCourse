@@ -47,4 +47,4 @@ router.post('/create', function (req, res) {
   });
 });
 
-exports.router = router;
+module.exports = router;
