@@ -35,14 +35,7 @@ exports.courses = function (name, callback) {
         if (err) {
           callback('Could not find courses for ' + name, null);
         } else {
-          var courseList = new Array(courses.length);
-          for (var i = 0, len = courses.length; i < len; i++) {
-            courseList[i] = {
-              name: courses[i].name,
-              courseNumber: courses[i].number
-            }
-          }
-          callback(null, courseList);
+          callback(null, courses);
         }
       });
     }

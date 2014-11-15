@@ -3,11 +3,11 @@ var router = express.Router();
 var universities = require('../models/universities');
 
 router.get('/averageRating/:name', function (req, res) {
-  var uid = parseInt(req.params['name']);
-  universities.averageRating(uid, function (err, average) {
+  var name = req.params['name'];
+  universities.averageRating(name, function (err, average) {
     if (err) {
       res.send({
-        error: 'Could not compute the average rating for university with id ' + uid,
+        error: 'Could not compute the average rating for university with name ' + name,
         data: null
       });
     } else {
@@ -20,11 +20,11 @@ router.get('/averageRating/:name', function (req, res) {
 });
 
 router.get('/courses/:name', function (req, res) {
-  var uid = parseInt(req.params['name']);
-  universities.courses(uid, function (err, courses) {
+  var name = req.params['name'];
+  universities.courses(name, function (err, courses) {
     if (err) {
       res.send({
-        error: 'Could not find courses for university with id ' + uid,
+        error: 'Could not find courses for university with name ' + name,
         data: null
       });
     } else {
