@@ -1,19 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var university = require('../models/universities');
+
 
 /* GET users listing. */
 router.get('/', function(req, res) {
-  res.render('users');
+  res.render('index', {title: 'Crowd Course', data: ''});
 });
 
 router.post('/login', function(req, res) {
-  university.getMUN(function (err, mun) {
-    res.render('index', {
-      title: 'Logged in!',
-      data: mun.toString()
-    })
-  });
+  res.render('index', {title: 'Login successful', data: ''});
 });
 
 module.exports = router;
