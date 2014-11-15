@@ -84,6 +84,7 @@ mongoose.model('Professors', ProfessorSchema);
 
 var CourseSchema = new mongoose.Schema({
   id: Number,
+  universityId: Number,
   name: String,
   number: Number,
   professor: String,
