@@ -4,10 +4,12 @@ var University = Universities = mongoose.model('Universities');
 var Rating = Ratings = mongoose.model('Ratings');
 var Course = Courses = mongoose.model('Courses');
 
-exports.averageRating = function (id, callback) {
-  Ratings.find({ universityId: id }, function (err, ratings) {
+exports.averageRating = function (name, callback) {
+  Ratings.findOne({ name: name }, function (err, ratings) {
     if (err) {
       callback(err, null);
+    } else if (typeof ratings === 'undefined' || ratings === null) {
+      callback(null, 0.0);
     } else {
       var sum = 0.0;
       for (var i = 0, len = ratings.length; i < len; i++) {
@@ -18,8 +20,8 @@ exports.averageRating = function (id, callback) {
   });
 };
 
-exports.courses = function (cid, callback) {
-  Courses.find({ id: cid }, function (err, courses) {
+exports.courses = function (name, callback) {
+  Courses.findOne({ name: name }, function (err, courses) {
     if (err) {
       callback(err, null);
     } else {
