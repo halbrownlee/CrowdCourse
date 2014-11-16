@@ -1,7 +1,13 @@
 var mongoose = require("mongoose");
 var bcrypt = require('bcrypt');
 
-mongoose.connect('mongodb://localhost:27017/db');
+mongoose.connect('mongodb://localhost:27017/db', function (err, res) {
+  if (err) {
+    throw Error('Can not connecting to db');
+  } else {
+    console.log('Successfully connected to db');
+  }
+});
 
 var UserSchema = new mongoose.Schema({
   username: String,
